@@ -12,7 +12,7 @@ import { useState } from "react";
 import { Checkbox } from "./ui/checkbox";
 import { setPage } from "@/store/PageStore";
 
-function Task({ task }: { task: TaskInfo }) {
+function Task({ task }: { task: TaskInfo}) {
   const { id, title, description, completed, tags, priority } = task;
 
   const { updateTask, deleteTask } = useTasksStore();
@@ -42,7 +42,6 @@ function Task({ task }: { task: TaskInfo }) {
 
   return (
     <div className={`task task-priority-${priority} completed-${isCompleted}`}>
-      <GripVertical className="task-handle" />
       <Checkbox
         checked={isCompleted}
         onCheckedChange={toggleTask}
